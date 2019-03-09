@@ -1,6 +1,6 @@
 # GrowUP
 ## Net-worth Tracking and Budget Application
-###### Designing and building a REST API using ASP.NET Web API for user authentication and retrieval/storage of user budget data. Client will be built using a combination of JQuery, React, and vanilla Javascript. Bootstrap 4 and CSS for styling/Layout
+###### For this project I will be designing and building a REST API using ASP.NET Web API for user authentication and retrieval/storage of user budget data. Client will be built using a combination of JQuery, React, and vanilla Javascript. Bootstrap 4 and CSS for styling/Layout
 
 ##### Main Project Ideas:
 - Track income, expenses
