@@ -18,3 +18,7 @@
 - React + (maybe Redux)
 - JQuery
 - Bootstrap 4 
+
+##### Other 3rd Party Software:
+- Plaid https://plaid.com/docs/
+-
