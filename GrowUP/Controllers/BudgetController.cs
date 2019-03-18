@@ -11,27 +11,18 @@ using GrowUP.Models;
 namespace GrowUP.Controllers
 {
     [Route("api/[controller]")]
-    public class UserController : Controller
+    public class BudgetController : Controller
     {
         private readonly growUPContext _context;
 
-        public UserController(growUPContext context)
+        public BudgetController(growUPContext context)
         {
             _context = context;
 
-            if (_context.Users.Count() == 0)
+            if (_context.Budget.Count() == 0)
             {
                 //
-                _context.Users.Add(new User { FirstName = "Nick", LastName = "Carpenter", Username = "NICA" });
-                _context.SaveChanges();
             }
-        }
-
-        // api/user
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
-        {
-            return await _context.Users.ToListAsync();
         }
 
     }
