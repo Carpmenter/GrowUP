@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <Folder Include="Client\" />
+    <Folder Include="Services\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>
