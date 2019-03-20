@@ -1,0 +1,9 @@
+
+#hdr{
+    background-image: url("images/header-img.png");
+    padding: 5%;
+    width: 100%;
+}
+#main{
+    background-color: black;
+}
