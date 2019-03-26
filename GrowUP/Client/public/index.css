@@ -1,36 +1,35 @@
 html { height: 100%; }
 body { 
     height: 100%; 
-    background-color: blueviolet !important;
+    background-color: rgb(186, 57, 236) !important;
 }
 #root{
     min-height: 100%;
 }
 #hdr{
-    background-image: url("images/header-img.png");
     height: 150px;
-    /* padding: 5%; */
+    font-size: 40px;
 }
 #main{
     color: white;
-    font-size: 42px;
+    font-size: 32px;
 }
 #chart{
-    background-color:yellow;
+    background-color:rgb(164, 230, 10);
     height: 350px;
     /* padding: 25px; */
 }
 #accounts{
-    background-color:blue;
+    background-color:rgb(13, 122, 117);
     height: 350px;
     /* padding: 5%; */
 }
 #earnings{
-    background-color:green;
+    background-color:rgb(64, 167, 103);
     height: 250px;
 }
-#expense{
-    background-color:red;
+#expenses{
+    background-color:rgb(255, 107, 21);
     height: 250px;
 }
 
@@ -39,4 +38,10 @@ body {
     #hdr{
         height: 75px;
     }
+}
+@media screen and (min-width: 1300px) {
+    #chart { height: 450px; }
+    #accounts { height: 450px; }
+    #earnings { height: 300px; }
+    #expenses { height: 300px; }
 }
