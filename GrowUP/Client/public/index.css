@@ -3,15 +3,40 @@ body {
     height: 100%; 
     background-color: blueviolet !important;
 }
-main { height: 100%; }
-
 #root{
     min-height: 100%;
 }
 #hdr{
     background-image: url("images/header-img.png");
-    padding: 5%;
+    height: 150px;
+    /* padding: 5%; */
 }
 #main{
     color: white;
+    font-size: 42px;
+}
+#chart{
+    background-color:yellow;
+    height: 350px;
+    /* padding: 25px; */
+}
+#accounts{
+    background-color:blue;
+    height: 350px;
+    /* padding: 5%; */
+}
+#earnings{
+    background-color:green;
+    height: 250px;
+}
+#expense{
+    background-color:red;
+    height: 250px;
+}
+
+/*### Mobile Formatting ###*/
+@media screen and (max-width: 766px) {
+    #hdr{
+        height: 75px;
+    }
 }
