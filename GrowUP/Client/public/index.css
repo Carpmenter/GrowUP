@@ -1,9 +1,17 @@
+html { height: 100%; }
+body { 
+    height: 100%; 
+    background-color: blueviolet !important;
+}
+main { height: 100%; }
 
+#root{
+    min-height: 100%;
+}
 #hdr{
     background-image: url("images/header-img.png");
     padding: 5%;
-    width: 100%;
 }
 #main{
-    background-color: black;
+    color: white;
 }

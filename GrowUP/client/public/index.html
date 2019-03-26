@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1"
     />
     <meta name="theme-color" content="#000000" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -17,14 +17,23 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
       <header>
-        <div id="hdr" class="container">a</div>
+        <div id="hdr">a</div>
       </header>
       <main>
-        <div id="main">s
-          <div></div>
+        <div id="main" class="container-fluid">
+          <div class="row">
+              <div class="col-7" style="background-color:yellow;">BudgetChart</div>
+              <div class="col-5" style="background-color:blue;">Accounts</div>
+          </div>
+          <div class="row">
+              <div class="col-6" style="background-color:red;">Expenses</div>
+              <div class="col-6" style="background-color:green;">Incomes</div>
+          </div>
         </div>
       </main>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </body>
 </html>
