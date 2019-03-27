@@ -9,9 +9,17 @@ body {
 #hdr{
     height: 150px;
     font-size: 40px;
+    color: rgb(0, 53, 0);
+}
+nav{
+    background-color: rgb(182, 182, 182);
 }
 #logo{
-    width: 550px;
+    width: 650px;
+}
+#nav-button{
+    width: 3em !important;
+    height: 3em !important;
 }
 #main{
     color: white;
@@ -37,17 +45,32 @@ body {
 }
 
 /*### Mobile Formatting ###*/
+@media screen and (max-width: 1300px) {
+    #logo{
+        width: 400px;
+    }
+    #hdr{
+        font-size: 28px;
+    }
+}
 @media screen and (max-width: 766px) {
     #hdr{
-        height: 75px;
+        height: 100px;
     }
     #logo{
         width: 300px;
+    }
+    #nav-button{
+        width: 2em !important;
+        height: 2em !important;
     }
 }
 @media screen and (max-width: 450px) {
     #logo{
         width: 200px;
+    }
+    #hdr{
+        height: 75px;
     }
 }
 @media screen and (min-width: 1300px) {
