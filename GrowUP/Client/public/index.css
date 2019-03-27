@@ -10,6 +10,9 @@ body {
     height: 150px;
     font-size: 40px;
 }
+#logo{
+    width: 550px;
+}
 #main{
     color: white;
     font-size: 32px;
@@ -37,6 +40,14 @@ body {
 @media screen and (max-width: 766px) {
     #hdr{
         height: 75px;
+    }
+    #logo{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 450px) {
+    #logo{
+        width: 200px;
     }
 }
 @media screen and (min-width: 1300px) {
