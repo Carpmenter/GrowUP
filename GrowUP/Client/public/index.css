@@ -8,11 +8,15 @@ body {
 }
 #hdr{
     height: 150px;
-    font-size: 40px;
+    font-size: 36px;
     color: rgb(0, 53, 0);
+    font-family: 'Rubik', sans-serif;
 }
 nav{
     background-color: rgb(182, 182, 182);
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(13, 109, 4) !important;
 }
 #logo{
     width: 650px;
