@@ -11,11 +11,15 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GrowUP.Controllers
 {
-  [Authorize]
+  //[Authorize]
     [Route("api/[controller]")]
     public class UserController : Controller
     {
         private readonly growUPContext _context;
+
+        /*** Testing Purposes ***/
+        
+        /***  ***/
 
         public UserController(growUPContext context)
         {
@@ -24,7 +28,12 @@ namespace GrowUP.Controllers
             if (_context.Users.Count() == 0)
             {
                 //
-                _context.Users.Add(new User { FirstName = "Nick", LastName = "Carpenter", Username = "NICA" });
+                _context.Users.Add(new User { FirstName = "Nick", LastName = "Carpenter", Username = "NICA", Id = 1 });
+                _context.Users.Add(new User { FirstName = "John", LastName = "Jones", Username = "JOJO", Id = 2 });
+                _context.Users.Add(new User { FirstName = "Jack", LastName = "Harris", Username = "JAHA", Id = 3 });
+                _context.Users.Add(new User { FirstName = "Nolan", LastName = "Snyder", Username = "NOSN", Id = 4 });
+                _context.Users.Add(new User { FirstName = "Biggie", LastName = "Rolan", Username = "BIRO", Id = 5 });
+                _context.Users.Add(new User { FirstName = "Jamal", LastName = "James", Username = "JAJA", Id = 6 });
                 _context.SaveChanges();
             }
         }
@@ -36,5 +45,19 @@ namespace GrowUP.Controllers
             return await _context.Users.ToListAsync();
         }
 
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<User> Get(int id)
+        {
+            List<User> u = _context.Users.ToList();
+            User e = new User();
+
+            if(id >=0 && id < u.Count)
+            {
+                e = u.ElementAt(id);
+            }
+
+            return e;
+        }
     }
 }

@@ -1,7 +1,7 @@
 html { height: 100%; }
 body { 
     height: 100%; 
-    background-color: rgb(186, 57, 236) !important;
+    background-color: rgba(212, 212, 212, 0.61) !important;
 }
 #root{
     min-height: 100%;
