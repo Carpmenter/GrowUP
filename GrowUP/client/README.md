@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Using React client with bootstrap 4 to create a flawless mobile-friendly UI
 
 ## Available Scripts
 
