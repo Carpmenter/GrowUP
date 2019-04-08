@@ -35,7 +35,7 @@ class Home extends React.Component {
                 {
                     !isAuthenticated() && (
                         <div className="container column">
-                            <h5>ReactiveSearch Auth0 Example</h5>
+                            <h5>Auth0</h5>
                             <h5>
                                 You are not logged in! Please{' '}
                                 <a
