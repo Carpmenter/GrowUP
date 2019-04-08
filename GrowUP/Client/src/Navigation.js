@@ -22,20 +22,18 @@ function Navigation(props) {
                 <li className="nav-item px-1">
                     <a className="nav-link" href="#">Transactions</a>
                 </li>
+                <li className="nav-item px-1">
+                        <a className="nav-link" href="#">Profile</a>
+                </li>
                 {
                     !auth0Client.isAuthenticated() &&
                     <button className="btn btn-light" onClick={auth0Client.signIn}>Sign In</button>
                 }
                 {
                     auth0Client.isAuthenticated() &&
-                    <div>
-                        <li className="nav-item px-1">
-                            <a className="nav-link" href="#">Profile</a>
-                        </li>
-                        <li>
-                            <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out</button>
-                        </li>
-                    </div>
+                    <li>
+                        <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out {auth0Client.getProfile().name}?</button>
+                    </li>
                 }
                 </ul>
             </div>
