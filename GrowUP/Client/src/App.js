@@ -4,6 +4,8 @@ import Accounts from './Accounts';
 import Expenses from './Expenses';
 import Earnings from './Earnings';
 import Navigation from './Navigation';
+import Callback from './Callback';
+import {Route} from 'react-router-dom';
 
 class App extends React.Component {
     render(){
@@ -11,6 +13,7 @@ class App extends React.Component {
             <div id="content">
             <header>
                 <Navigation />
+                <Route exact path='/callback' component={Callback} />
             </header>
             <main>
                 <div id="main" className="container-fluid">
