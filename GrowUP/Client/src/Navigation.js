@@ -32,7 +32,7 @@ function Navigation(props) {
                 {
                     auth0Client.isAuthenticated() &&
                     <li>
-                        <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out {auth0Client.getProfile().name}?</button>
+                        <button className="btn btn-light" onClick={() => {signOut()}}>Sign Out {auth0Client.getProfile().name}?</button>
                     </li>
                 }
                 </ul>
