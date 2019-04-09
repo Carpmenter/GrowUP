@@ -6,6 +6,7 @@ import Earnings from './Earnings';
 import Navigation from './Navigation';
 import Callback from './Callback';
 import {Route} from 'react-router-dom';
+import SecuredRoute from './SecuredRoute/SecuredRoute';
 
 class App extends React.Component {
     render(){
@@ -22,7 +23,7 @@ class App extends React.Component {
                         <Chart />
                     </div>
                     <div id="accounts" className="col-md-4 mx-3 my-3">
-                        <Accounts />
+                        <SecuredRoute path='/dashboard' component={Accounts} />
                     </div>
                 </div>
                 <div className="row">
