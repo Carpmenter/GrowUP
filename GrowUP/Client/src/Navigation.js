@@ -17,9 +17,7 @@ function Navigation(props) {
             <div className="collapse navbar-collapse" id="nav">
                 <ul className="navbar-nav">
                 <li className="nav-item px-1">
-                    <Link to='/dashboard'>
-                        <a className="nav-link" href="#">Dashboard</a>
-                    </Link>
+                    <a className="nav-link" href="#">Dashboard</a>
                 </li>
                 <li className="nav-item px-1">
                     <a className="nav-link" href="#">Transactions</a>

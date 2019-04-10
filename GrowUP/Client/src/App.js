@@ -5,14 +5,29 @@ import Expenses from './Expenses';
 import Earnings from './Earnings';
 import Navigation from './Navigation';
 import Callback from './Callback';
-import {Route} from 'react-router-dom';
-import SecuredRoute from './SecuredRoute/SecuredRoute';
+import {Route, withRouter} from 'react-router-dom';
 import auth0Client from './Auth';
+import Unauthorized from './Unauthorized';
 
 
 
 class App extends React.Component {
     render(){
+
+        if (!auth0Client.isAuthenticated()){
+            return (
+                <div id="content">
+                    <header>
+                        <Navigation />
+                        <Route exact path='/callback' component={Callback} />
+                    </header>
+                    <main>
+                        <Unauthorized />
+                    </main>
+                </div>
+            );
+        }
+        
         return (
             <div id="content">
             <header>
@@ -22,13 +37,12 @@ class App extends React.Component {
             <main>
                 <div id="main" className="container-fluid">
                     <div className="row">
-                    
-                        {/* <SecuredRoute path='/dashboard' component={Chart} /> */}
-                        <SecuredRoute path='/dashboard' component={Accounts} />
+                        <Chart />
+                        <Accounts />
                     </div>
                     <div className="row">
-                        <SecuredRoute path='/dashboard' component={Expenses} />
-                        <SecuredRoute path='/dashboard' component={Earnings} />
+                        <Expenses />
+                        <Earnings />
                     </div>
                 </div>
             </main>
@@ -37,4 +51,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default withRouter(App);
