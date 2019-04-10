@@ -7,6 +7,9 @@ import Navigation from './Navigation';
 import Callback from './Callback';
 import {Route} from 'react-router-dom';
 import SecuredRoute from './SecuredRoute/SecuredRoute';
+import auth0Client from './Auth';
+
+
 
 class App extends React.Component {
     render(){
@@ -18,22 +21,15 @@ class App extends React.Component {
             </header>
             <main>
                 <div id="main" className="container-fluid">
-                <div className="row">
-                    <div id="chart" className="col-md-7 mx-3 my-3">
-                        <Chart />
-                    </div>
-                    <div id="accounts" className="col-md-4 mx-3 my-3">
+                    <div className="row">
+                    
+                        {/* <SecuredRoute path='/dashboard' component={Chart} /> */}
                         <SecuredRoute path='/dashboard' component={Accounts} />
                     </div>
-                </div>
-                <div className="row">
-                    <div id="expenses" className="col-md-5 mx-3 my-3">
-                        <Expenses />
+                    <div className="row">
+                        <SecuredRoute path='/dashboard' component={Expenses} />
+                        <SecuredRoute path='/dashboard' component={Earnings} />
                     </div>
-                    <div id="earnings" className="col-md-5 mx-3 my-3">
-                        <Earnings />
-                    </div>
-                </div>
                 </div>
             </main>
         </div>
