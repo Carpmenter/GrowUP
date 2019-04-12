@@ -36,24 +36,37 @@ nav{
     /* padding: 25px; */
 }
 #accounts{
-    background-color:rgba(234, 241, 168, 0.377);
+    background-color:rgba(42, 192, 22, 0.281);
     /* background-image: linear-gradient(to right,rgba(224, 224, 224, 0.555), #ffffff, rgba(226, 226, 226, 0.541)); */
     height: 350px;
     box-shadow: 0 0 10px rgb(54, 54, 54);
     /* padding: 5%; */
+}
+#acct-head{
+    text-align: center !important;
+    background-image:linear-gradient(rgba(183, 236, 37, 0.5),rgba(224, 224, 224, 0.397),rgba(183, 236, 37, 0.5));
+}
+.acct-row{
+    background-image:linear-gradient(rgba(201, 201, 201, 0.589),rgba(224, 224, 224, 0.397),rgba(201, 201, 201, 0.637));
 }
 #earnings{
     background-color:rgba(234, 241, 168, 0.377);
     /* background-image: linear-gradient(rgba(8, 78, 5, 0.973), #09c729); */
     height: 250px;
     box-shadow: 0 0 10px rgb(54, 54, 54);
+    display:inline-block;
 }
 #expenses{
     background-color:rgba(234, 241, 168, 0.377);
     /* background-image: linear-gradient(red, #f06d06); */
     height: 250px;
     box-shadow: 0 0 10px rgb(54, 54, 54);
+    display:inline-block;
 }
+.row-center{
+    text-align:center;
+}
+
 
 /*### Mobile Formatting ###*/
 @media screen and (max-width: 1300px) {
