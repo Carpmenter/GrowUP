@@ -26,6 +26,7 @@ nav{
     height: 3em !important;
 }
 #main{
+    position: relative;
     color: white;
     font-size: 32px;
 }
