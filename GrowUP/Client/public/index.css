@@ -6,15 +6,12 @@ body {
 #root{
     min-height: 100%;
 }
-#hdr{
+/* #hdr{
     height: 125px;
     font-size: 36px;
     color: rgb(0, 53, 0);
     font-family: 'Rubik', sans-serif;
-}
-nav{
-    background-color: rgb(182, 182, 182);
-}
+} */
 .navbar-light .navbar-nav .nav-link {
     color: rgb(13, 109, 4) !important;
 }
@@ -74,14 +71,14 @@ nav{
     #logo{
         width: 400px;
     }
-    #hdr{
+    /* #hdr{
         font-size: 28px;
-    }
+    } */
 }
 @media screen and (max-width: 766px) {
-    #hdr{
+    /* #hdr{
         height: 100px;
-    }
+    } */
     #logo{
         width: 300px;
     }
@@ -94,9 +91,9 @@ nav{
     #logo{
         width: 200px;
     }
-    #hdr{
+    /* #hdr{
         height: 75px;
-    }
+    } */
 }
 @media screen and (min-width: 1300px) {
     #chart { height: 450px; }

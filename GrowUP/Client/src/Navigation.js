@@ -12,10 +12,13 @@ function Navigation(props) {
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light" id="hdr">
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon" id="nav-button">Fix Formatting</span>
+                <span className="navbar-toggler-icon" id="nav-button"></span>
             </button>
+            <a className="navbar-brand" href="#">
+                <img src="./images/logo3.png" id="logo"/>
+            </a>
             <div className="collapse navbar-collapse" id="nav">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav ml-auto">
                     <li className="nav-item px-1">
                         <a className="nav-link" href="#">Dashboard</a>
                     </li>
@@ -27,17 +30,18 @@ function Navigation(props) {
                     </li>
                     {
                         !auth0Client.isAuthenticated() &&
-                        <button className="btn btn-light" onClick={auth0Client.signIn}>Sign In</button>
+                        <li className="nav-item px-1">
+                            <button className="btn btn-light" onClick={auth0Client.signIn}>Sign In</button>
+                        </li>
                     }
                     {
                         auth0Client.isAuthenticated() &&
-                        <button className="btn btn-light" onClick={() => {signOut()}}>Sign Out {auth0Client.getProfile().name}?</button>
+                        <li className="nav-item px-1">
+                            <button className="btn btn-light" onClick={() => {signOut()}}>Sign Out {auth0Client.getProfile().name}?</button>
+                        </li>
                     }
                 </ul>
             </div>
-            <a className="navbar-brand" href="#">
-                <img src="./images/logo3.png" id="logo"/>
-            </a>
         </nav>
         
     );
