@@ -6,12 +6,11 @@ body {
 #root{
     min-height: 100%;
 }
-/* #hdr{
-    height: 125px;
+#hdr{
     font-size: 36px;
     color: rgb(0, 53, 0);
     font-family: 'Rubik', sans-serif;
-} */
+}
 .navbar-light .navbar-nav .nav-link {
     color: rgb(13, 109, 4) !important;
 }
@@ -21,6 +20,17 @@ body {
 #nav-button{
     width: 3em !important;
     height: 3em !important;
+}
+#unauth{
+    background-image: url('./images/default-bkg.jpg');
+    /* filter: blur(2px); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* remove height*/
+    height: 1000px;
+    padding: 5%;
+    text-align: center;
+    font-size: 32px;
 }
 #main{
     position: relative;
@@ -66,19 +76,17 @@ body {
 }
 
 
-/*### Mobile Formatting ###*/
+/* Small Desktops */
 @media screen and (max-width: 1300px) {
     #logo{
         width: 400px;
     }
-    /* #hdr{
+    #hdr{
         font-size: 28px;
-    } */
+    }
 }
+/* Tablet formatting */
 @media screen and (max-width: 766px) {
-    /* #hdr{
-        height: 100px;
-    } */
     #logo{
         width: 300px;
     }
@@ -87,13 +95,14 @@ body {
         height: 2em !important;
     }
 }
+/* Mobile Formatting */
 @media screen and (max-width: 450px) {
     #logo{
         width: 200px;
     }
-    /* #hdr{
-        height: 75px;
-    } */
+    #hdr{
+        font-size: 18px;
+    }
 }
 @media screen and (min-width: 1300px) {
     #chart { height: 450px; }
