@@ -7,7 +7,7 @@ function Unauthorized(){
 
     if (!auth0Client.isAuthenticated()){
         return (
-            <div className="container-fluid " id="unauth">
+            <div className="container-fluid" id="unauth" >
                 <div className="row py-3">
                     <div>To access features of GrowUP you must be logged in.</div>
                     <div>
