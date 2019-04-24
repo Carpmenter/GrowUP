@@ -32,7 +32,7 @@ class Chart extends React.Component {
             <div id="chart" className="col-md-7 mx-3 my-3">
                 <div className="container-fluid">
                     <div className="row pt-5">
-                        <div className="col mr-2">
+                        <div id="chart-data" className="col-lg mr-2">
                             <Doughnut
                                 data={chartData}
                                 width={300}
@@ -40,7 +40,7 @@ class Chart extends React.Component {
                                 options={{ maintainAspectRatio: false }}
                             />
                         </div>
-                        <div className="col ml-2">March Total Spending</div>
+                        <div id="chart-table" className="col-lg ml-2">March Total Spending</div>
                     </div>
                 </div>
             </div>

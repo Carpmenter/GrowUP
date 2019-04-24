@@ -45,6 +45,13 @@ body {
     height: 350px;
     /* padding: 25px; */
 }
+#chart-data{
+    background-color: greenyellow;
+}
+#chart-table{
+    background-color: rgb(16, 190, 0);
+    color: black;
+}
 #accounts{
     background-color:rgba(42, 192, 22, 0.281);
     /* background-image: linear-gradient(to right,rgba(224, 224, 224, 0.555), #ffffff, rgba(226, 226, 226, 0.541)); */
