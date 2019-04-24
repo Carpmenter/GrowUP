@@ -14,19 +14,19 @@ import Unauthorized from './Unauthorized';
 class App extends React.Component {
     render(){
         // Uncomment for authorized rendering
-        if (!auth0Client.isAuthenticated()){
-            return (
-                <div id="content">
-                    <header>
-                        <Navigation />
-                        <Route exact path='/callback' component={Callback} />
-                    </header>
-                    <main>
-                        <Unauthorized />
-                    </main>
-                </div>
-            );
-        }
+        // if (!auth0Client.isAuthenticated()){
+        //     return (
+        //         <div id="content">
+        //             <header>
+        //                 <Navigation />
+        //                 <Route exact path='/callback' component={Callback} />
+        //             </header>
+        //             <main>
+        //                 <Unauthorized />
+        //             </main>
+        //         </div>
+        //     );
+        // }
         
         return (
             <div id="content">
