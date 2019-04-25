@@ -5,6 +5,15 @@ import { Doughnut } from 'react-chartjs-2';
 
 class Chart extends React.Component {
 
+    constructor(props){
+        super(props);
+    }
+
+    componentDidMount(){
+        //this.props.chartSize = document.getElementById('chart').offsetWidth;
+        //console.log(this.props.chartSize);
+    }
+
     render(){
 
         var chartData = {
@@ -27,16 +36,15 @@ class Chart extends React.Component {
                 borderWidth: 1
             }]
         };
-
         return (
             <div id="chart" className="col-md-7 mx-3 my-3">
-                <div className="container-fluid">
+                <div className="container-fluid fill">
                     <div className="row pt-5">
                         <div id="chart-data" className="col-lg mr-2">
                             <Doughnut
                                 data={chartData}
-                                width={300}
-                                height={300}
+                                width={350}
+                                height={350}
                                 options={{ maintainAspectRatio: false }}
                             />
                         </div>

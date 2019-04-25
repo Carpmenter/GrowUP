@@ -46,7 +46,8 @@ body {
     /* padding: 25px; */
 }
 #chart-data{
-    background-color: greenyellow;
+    background-color: rgba(172, 255, 47, 0.349);
+    box-shadow: 0 0 10px rgb(54, 54, 54);
 }
 #chart-table{
     background-color: rgb(16, 190, 0);
