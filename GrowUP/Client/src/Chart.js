@@ -36,6 +36,9 @@ class Chart extends React.Component {
                 borderWidth: 1
             }]
         };
+
+        //var chartSize = document.getElementById('chart').offsetWidth;
+
         return (
             <div id="chart" className="col-md-7 mx-3 my-3">
                 <div className="container-fluid fill">

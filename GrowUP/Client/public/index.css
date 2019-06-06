@@ -46,11 +46,11 @@ body {
     /* padding: 25px; */
 }
 #chart-data{
-    background-color: rgba(172, 255, 47, 0.349);
+    background-color: rgba(252, 252, 252, 0.562);
     box-shadow: 0 0 10px rgb(54, 54, 54);
 }
 #chart-table{
-    background-color: rgb(16, 190, 0);
+    background-color: rgb(15, 75, 9);
     color: black;
 }
 #accounts{
