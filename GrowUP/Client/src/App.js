@@ -13,14 +13,22 @@ import Unauthorized from './Unauthorized';
 
 class App extends React.Component {
 
+    constructor(props){
+        super(props);
+
+        this.state = {user : ''}
+    }
+
     getUser(){
         let profile = auth0Client.getProfile();
     }
-    // public async componentDidMount() {
-    //     const result = await fetch('https://localhost:44348/api/user');
-    //     const users = await result.json();
-    //     this.setState({ users });
-    // }
+    async componentDidMount() {
+        const result = await fetch('https://localhost:44369/api/values');
+        const users = await result.json();
+        console.log(users);
+        //user.name
+        this.setState({ user : users });
+    }
 
 
 
@@ -55,6 +63,10 @@ class App extends React.Component {
                     <div className="row justify-content-center">
                         <Expenses />
                         <Earnings />
+                    </div>API value:
+                    {this.state.user}
+                    <div>
+
                     </div>
                 </div>
             </main>
