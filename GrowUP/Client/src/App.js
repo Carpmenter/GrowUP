@@ -12,21 +12,33 @@ import Unauthorized from './Unauthorized';
 
 
 class App extends React.Component {
+
+    getUser(){
+        let profile = auth0Client.getProfile();
+    }
+    // public async componentDidMount() {
+    //     const result = await fetch('https://localhost:44348/api/user');
+    //     const users = await result.json();
+    //     this.setState({ users });
+    // }
+
+
+
     render(){
         // Uncomment for authorized rendering
-        // if (!auth0Client.isAuthenticated()){
-        //     return (
-        //         <div id="content">
-        //             <header>
-        //                 <Navigation />
-        //                 <Route exact path='/callback' component={Callback} />
-        //             </header>
-        //             <main>
-        //                 <Unauthorized />
-        //             </main>
-        //         </div>
-        //     );
-        // }
+        if (!auth0Client.isAuthenticated()){
+            return (
+                <div id="content">
+                    <header>
+                        <Navigation />
+                        <Route exact path='/callback' component={Callback} />
+                    </header>
+                    <main>
+                        <Unauthorized />
+                    </main>
+                </div>
+            );
+        }
         
         return (
             <div id="content">

@@ -14,6 +14,16 @@ namespace GrowUP.Models
             Income = new HashSet<Income>();
         }
 
+        public User(string Username, string Token)
+        { 
+            this.Username = Username;
+            this.Token = Token;
+
+            Budget = new HashSet<Budget>();
+            Expense = new HashSet<Expense>();
+            Income = new HashSet<Income>();
+        }
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
