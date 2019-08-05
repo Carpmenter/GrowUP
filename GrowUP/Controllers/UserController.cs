@@ -13,6 +13,7 @@ namespace GrowUP.Controllers
 {
   //[Authorize]
     [Route("api/[controller]")]
+    [ApiController]
     public class UserController : Controller
     {
         private readonly growUPContext _context;

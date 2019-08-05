@@ -23,7 +23,7 @@ class App extends React.Component {
         let profile = auth0Client.getProfile();
     }
     async componentDidMount() {
-        const result = await fetch('https://localhost:44369/api/values');
+        const result = await fetch('https://localhost:44369/api/user');
         const users = await result.json();
         console.log(users);
         //user.name
@@ -63,10 +63,8 @@ class App extends React.Component {
                     <div className="row justify-content-center">
                         <Expenses />
                         <Earnings />
-                    </div>API value:
-                    {this.state.user}
+                    </div>
                     <div>
-
                     </div>
                 </div>
             </main>
