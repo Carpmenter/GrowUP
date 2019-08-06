@@ -60,5 +60,23 @@ namespace GrowUP.Controllers
 
             return e;
         }
+
+        //POST: api/User
+        [HttpPost]
+        public async Task<ActionResult<IEnumerable<User>>> PostUser(User user)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid data.");
+
+            _context.Users.Add(new Models.User
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Username = user.Username,
+                Id = user.Id
+            });
+
+            return Ok();
+        }
     }
 }
