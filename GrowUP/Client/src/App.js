@@ -16,37 +16,39 @@ class App extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {user : ''}
+        this.state = {user : '', profile : auth0Client.getProfile() }
+        
     }
 
-    getUser(){
-        let profile = auth0Client.getProfile();
-    }
     async componentDidMount() {
-        const result = await fetch('https://localhost:44369/api/user');
-        const users = await result.json();
-        console.log(users);
-        //user.name
-        this.setState({ user : users });
+        //const result = await fetch('https://localhost:44369/api/user');
+        //const users = await result.json();
+        this.setState({ user : 'boy'});
+        console.log(this.state.profile);
     }
 
-
+    async componentDidUpdate(){
+        if (this.state.profile = undefined){
+            this.setState({profile : auth0Client.getProfile()});
+        }
+        console.log(this.state.profile);
+    }
 
     render(){
         // Uncomment for authorized rendering
-        if (!auth0Client.isAuthenticated()){
-            return (
-                <div id="content">
-                    <header>
-                        <Navigation />
-                        <Route exact path='/callback' component={Callback} />
-                    </header>
-                    <main>
-                        <Unauthorized />
-                    </main>
-                </div>
-            );
-        }
+        // if (!auth0Client.isAuthenticated()){
+        //     return (
+        //         <div id="content">
+        //             <header>
+        //                 <Navigation />
+        //                 <Route exact path='/callback' component={Callback} />
+        //             </header>
+        //             <main>
+        //                 <Unauthorized />
+        //             </main>
+        //         </div>
+        //     );
+        // }
         
         return (
             <div id="content">
@@ -61,7 +63,7 @@ class App extends React.Component {
                         <Accounts />
                     </div>
                     <div className="row justify-content-center">
-                        <Expenses />
+                        <Expenses profile={this.state.user}/>
                         <Earnings />
                     </div>
                     <div>
