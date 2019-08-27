@@ -22,3 +22,4 @@
 ##### Other 3rd Party Software:
 - Plaid https://plaid.com/docs/
 - Auth0 Identity service https://auth0.com/docs
+- Alpha Vantage Stock data and Cryptocurrency feeds https://www.alphavantage.co/documentation/
