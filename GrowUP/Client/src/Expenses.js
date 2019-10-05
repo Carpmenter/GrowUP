@@ -11,7 +11,7 @@ class Expenses extends React.Component {
 
         return (
             <div id="expenses" className="col-md-5 mx-3 my-3">
-                <div className="container-fluid">Hello {this.props.profile}</div>
+                <div className="container-fluid">Hello </div>
             </div>
         );
     }

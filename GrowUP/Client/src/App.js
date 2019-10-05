@@ -28,9 +28,9 @@ class App extends React.Component {
     }
 
     async componentDidUpdate(){
-        if (this.state.profile = undefined){
-            this.setState({profile : auth0Client.getProfile()});
-        }
+        // if (this.state.profile == undefined){
+        //     this.setState({profile : auth0Client.getProfile()});
+        // }
         console.log(this.state.profile);
     }
 
@@ -49,7 +49,7 @@ class App extends React.Component {
         //         </div>
         //     );
         // }
-        
+
         return (
             <div id="content">
             <header>
@@ -63,7 +63,7 @@ class App extends React.Component {
                         <Accounts />
                     </div>
                     <div className="row justify-content-center">
-                        <Expenses profile={this.state.user}/>
+                        <Expenses profile={this.state.profile}/>
                         <Earnings />
                     </div>
                     <div>
