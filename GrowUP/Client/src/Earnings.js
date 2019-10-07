@@ -16,7 +16,7 @@ class Earnings extends React.Component {
     };
 
     componentDidMount(){
-        fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=SDLLR8OP6L3RA1Q4')
+        fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SHOP&apikey=SDLLR8OP6L3RA1Q4')
         .then(result => result.json())
         .then((result) => {
             let meta = result['Meta Data'];

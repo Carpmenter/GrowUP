@@ -20,10 +20,13 @@ function Navigation(props) {
             <div className="collapse navbar-collapse" id="nav">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item px-1">
-                        <a className="nav-link" href="#">Dashboard</a>
+                        <a className="nav-link" href="#">Home</a>
                     </li>
                     <li className="nav-item px-1">
                         <a className="nav-link" href="#">Transactions</a>
+                    </li>
+                    <li className="nav-item px-1">
+                        <a className="nav-link" href="#">Invest</a>
                     </li>
                     <li className="nav-item px-1">
                             <a className="nav-link" href="#">Profile</a>
