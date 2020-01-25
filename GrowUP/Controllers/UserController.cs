@@ -46,7 +46,7 @@ namespace GrowUP.Controllers
             return await _context.Users.ToListAsync();
         }
 
-        // GET api/values/5
+        // GET api/user/3
         [HttpGet("{id}")]
         public ActionResult<User> Get(int id)
         {
@@ -63,20 +63,34 @@ namespace GrowUP.Controllers
 
         //POST: api/User
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<User>>> PostUser(User user)
+        public async Task<ActionResult<IEnumerable<User>>> AddUser(User userData)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Invalid data.");
 
+
+
             _context.Users.Add(new Models.User
             {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Username = user.Username,
-                Id = user.Id
+                FirstName = userData.FirstName,
+                LastName = userData.LastName,
+                Username = userData.Username,
+                Id = userData.Id
             });
 
             return Ok();
+
+            //{
+            //    "id": 2,
+            //    "firstName": "John",
+            //    "lastName": "Jones",
+            //    "username": "JOJO",
+            //    "password": null,
+            //    "token": null,
+            //    "budget": [],
+            //    "expense": [],
+            //    "income": []
+            //}
         }
     }
 }
