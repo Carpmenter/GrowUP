@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Authorization;
 namespace GrowUP.Controllers
 {
   //[Authorize]
-    [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
     {
@@ -39,29 +38,30 @@ namespace GrowUP.Controllers
             }
         }
 
-        // api/user
+
+        [Route("Users")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
-        // GET api/user/3
-        [HttpGet("{id}")]
-        public ActionResult<User> Get(int id)
-        {
-            List<User> u = _context.Users.ToList();
-            User e = new User();
 
-            if(id >=0 && id < u.Count)
+        [Route("Users/{id}")]
+        [HttpGet]
+        public async Task<ActionResult<User>> Get(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
             {
-                e = u.ElementAt(id);
+                return NotFound();
             }
 
-            return e;
+            return user;
         }
 
-        //POST: api/User
+        [Route("Add-User")]
         [HttpPost]
         public async Task<ActionResult<IEnumerable<User>>> AddUser(User userData)
         {
@@ -70,7 +70,7 @@ namespace GrowUP.Controllers
 
 
 
-            _context.Users.Add(new Models.User
+            await _context.Users.AddAsync(new User
             {
                 FirstName = userData.FirstName,
                 LastName = userData.LastName,
@@ -78,19 +78,55 @@ namespace GrowUP.Controllers
                 Id = userData.Id
             });
 
-            return Ok();
+            await _context.SaveChangesAsync();
 
-            //{
-            //    "id": 2,
-            //    "firstName": "John",
-            //    "lastName": "Jones",
-            //    "username": "JOJO",
-            //    "password": null,
-            //    "token": null,
-            //    "budget": [],
-            //    "expense": [],
-            //    "income": []
-            //}
+            return Ok(userData);
+
         }
+
+        [Route("Update-User")]
+        [HttpPut]
+        public async Task<ActionResult<IEnumerable<User>>> UpdateUser(User userData)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Not a valid model");
+
+            var user = await _context.Users.Where(u => u.Id == userData.Id).FirstOrDefaultAsync<User>();
+
+            if (user != null)
+            {
+                user.FirstName = userData.FirstName;
+                user.LastName = userData.LastName;
+                user.Username = userData.Username;
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+
+        [Route("Delete-User/{id}")]
+        [HttpDelete]
+        public async Task<ActionResult<User>> DeleteUser(int id)
+        {
+            if (id <= 0)
+                return BadRequest("Not a valid User id");
+
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(user);
+        }
+
     }
 }

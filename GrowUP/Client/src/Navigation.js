@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {Link, withRouter, ReactDOM} from 'react-router-dom';
 import auth0Client from './Auth';
 
 function Navigation(props) {
@@ -23,13 +23,13 @@ function Navigation(props) {
                         <a className="nav-link" href="#">Home</a>
                     </li>
                     <li className="nav-item px-1">
-                        <a className="nav-link" href="#">Transactions</a>
+                        <a className="nav-link" href="/transactions">Transactions</a>
                     </li>
                     <li className="nav-item px-1">
-                        <a className="nav-link" href="#">Invest</a>
+                        <a className="nav-link" href="/invest">Invest</a>
                     </li>
                     <li className="nav-item px-1">
-                            <a className="nav-link" href="#">Profile</a>
+                            <a className="nav-link" href="/profile">Profile</a>
                     </li>
                     {
                         !auth0Client.isAuthenticated() &&
