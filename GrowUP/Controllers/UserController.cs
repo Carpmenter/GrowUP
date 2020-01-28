@@ -40,7 +40,7 @@ namespace GrowUP.Controllers
 
 
         [Route("Users")]
-        [HttpGet]
+        [HttpGet, Authorize]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
