@@ -27,13 +27,13 @@ namespace GrowUP.Controllers
 
             if (_context.Users.Count() == 0)
             {
-                //
-                _context.Users.Add(new User { FirstName = "Nick", LastName = "Carpenter", Username = "NICA", Id = 1 });
-                _context.Users.Add(new User { FirstName = "John", LastName = "Jones", Username = "JOJO", Id = 2 });
-                _context.Users.Add(new User { FirstName = "Jack", LastName = "Harris", Username = "JAHA", Id = 3 });
-                _context.Users.Add(new User { FirstName = "Nolan", LastName = "Snyder", Username = "NOSN", Id = 4 });
-                _context.Users.Add(new User { FirstName = "Biggie", LastName = "Rolan", Username = "BIRO", Id = 5 });
-                _context.Users.Add(new User { FirstName = "Jamal", LastName = "James", Username = "JAJA", Id = 6 });
+                //Can be removed at anytime (Working DB)
+                _context.Users.Add(new User { FirstName = "Nick", LastName = "Carpenter", Username = "NICA"});
+                _context.Users.Add(new User { FirstName = "John", LastName = "Jones", Username = "JOJO" });
+                _context.Users.Add(new User { FirstName = "Jack", LastName = "Harris", Username = "JAHA"});
+                _context.Users.Add(new User { FirstName = "Nolan", LastName = "Snyder", Username = "NOSN"});
+                _context.Users.Add(new User { FirstName = "Biggie", LastName = "Rolan", Username = "BIRO"});
+                _context.Users.Add(new User { FirstName = "Jamal", LastName = "James", Username = "JAJA" });
                 _context.SaveChanges();
             }
         }
@@ -74,8 +74,7 @@ namespace GrowUP.Controllers
             {
                 FirstName = userData.FirstName,
                 LastName = userData.LastName,
-                Username = userData.Username,
-                Id = userData.Id
+                Username = userData.Username
             });
 
             await _context.SaveChangesAsync();

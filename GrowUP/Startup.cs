@@ -30,7 +30,7 @@ namespace GrowUP
             services.AddCors();
 
             services.AddDbContext<growUPContext>(opt =>
-                opt.UseInMemoryDatabase("GrowUP"));
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
