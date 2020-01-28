@@ -12,6 +12,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using GrowUP.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace GrowUP
 {
@@ -27,10 +30,21 @@ namespace GrowUP
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
+
             services.AddCors();
 
             services.AddDbContext<growUPContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            /*services.AddDbContext<UserAccountDbContext>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));*/
+
+            services.AddDbContext<UserAccountDbContext>(opt => opt.UseInMemoryDatabase("UserAccountDB"));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<UserAccountDbContext>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -49,7 +63,10 @@ namespace GrowUP
 
             app.UseCors(builder => builder.WithOrigins("http://localhost:3000"));
             app.UseHttpsRedirection();
+            //app.UseIdentity(); (being removed)
+            app.UseAuthentication();
             app.UseMvc();
         }
+
     }
 }
