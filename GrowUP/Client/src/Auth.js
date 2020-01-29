@@ -1,18 +1,18 @@
 import auth0 from 'auth0-js';
+import { AuthConfig } from './AuthConfig';
 
 class Auth {
 
     constructor() {
 
         this.auth0 = new auth0.WebAuth({
-            domain: 'nica-dev.auth0.com',
-            clientID: 'Epu3GVscbU3Ld0fZZz4Zcsihv5JBkUW9',
-            // redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://carpmenter.github.io/GrowUP-Client/callback',
-            redirectUri: 'http://localhost:3000/callback',
-            audience: 'https://nica-dev.auth0.com/userinfo',
-            responseType: 'id_token',
-            scope: 'openid profile'
-        });
+            domain: AuthConfig.domain,
+            clientID: AuthConfig.clientID,
+            redirectUri: AuthConfig.redirectUri,
+            audience: AuthConfig.audience,
+            responseType: 'token id_token',
+            scope: 'openid'
+          });
 
         this.getProfile = this.getProfile.bind(this);
         this.handleAuthentication = this.handleAuthentication.bind(this);
