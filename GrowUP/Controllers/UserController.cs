@@ -33,7 +33,7 @@ namespace GrowUP.Controllers
                 _context.Users.Add(new User { FirstName = "Jack", LastName = "Harris", Username = "JAHA"});
                 _context.Users.Add(new User { FirstName = "Nolan", LastName = "Snyder", Username = "NOSN"});
                 _context.Users.Add(new User { FirstName = "Biggie", LastName = "Rolan", Username = "BIRO"});
-                _context.Users.Add(new User { FirstName = "Jamal", LastName = "James", Username = "JAJA" });
+                _context.Users.Add(new User { FirstName = "Donald", LastName = "Trump", Username = "DOTR" });
                 _context.SaveChanges();
             }
         }

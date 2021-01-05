@@ -35,7 +35,7 @@ class App extends React.Component {
     }
 
     render(){
-        //Uncomment for authorized rendering
+        /*//Uncomment for authorized rendering
         if (!auth0Client.isAuthenticated()){
             return (
                 <div id="content">
@@ -48,7 +48,7 @@ class App extends React.Component {
                     </main>
                 </div>
             );
-        }
+        } */
 
         return (
             <div id="content">
